@@ -31,7 +31,7 @@ function Tambahdata () {
       harga: ""
     });
 
-    Navigate("/Tabeldata"); // setelah daftar, arahkan ke login
+    Navigate("/U"); // setelah daftar, arahkan ke login
   } catch (error) {
     console.error("Error saat menambahkan data:", error);
     alert("Gagal menambahkan data.");
@@ -98,7 +98,7 @@ function Tambahdata () {
               {loading ? "Menambahkan..." : "Paket"}
             </button>
             <Link
-              to="/l"
+              to="/U"
               className="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             >
               Kembali

@@ -9,22 +9,10 @@
   ],
   "menu": [
     {
-      "makanan": "nasi goreng",
-      "paket": "paket 1",
-      "harga": "100000",
-      "id": "1"
-    },
-    {
-      "makanan": "gkgh",
-      "paket": "kbnbkbk",
-      "harga": "41213545",
-      "id": "2"
-    },
-    {
-      "id": "7442",
-      "makanan": "ayam",
-      "paket": "paket 1",
-      "harga": "2000"
+      "id": "f32b",
+      "makanan": "moreno kecap celup",
+      "paket": "paket 4",
+      "harga": "9999"
     }
   ]
 }
