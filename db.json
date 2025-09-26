@@ -9,10 +9,22 @@
   ],
   "menu": [
     {
-      "id": "f32b",
-      "makanan": "moreno kecap celup",
-      "paket": "paket 4",
-      "harga": "9999"
+      "id": "79a1",
+      "makanan": "ayam",
+      "paket": "paket 1",
+      "harga": "29000"
+    },
+    {
+      "id": "ffd3",
+      "makanan": "ayyas penyet khas papua pedalaman",
+      "paket": "paket 8",
+      "harga": "20000"
+    },
+    {
+      "id": "8e99",
+      "makanan": "kopi",
+      "paket": "kontrakan",
+      "harga": "memakan"
     }
   ]
 }

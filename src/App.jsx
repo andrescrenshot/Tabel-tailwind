@@ -8,21 +8,27 @@ import Landingpage from "./pages/Landingpage";
 import Tambahdata from "./pages/Tambahdata"
 import Tabeldata from "./pages/Tabeldata";
 import Editdata from "./pages/Editdata";
+import Sidnav from "./component/sidnav";
+import Dashboard from "./component/Dashboard";
 
 
 
 
 const App = () => {
   return (
-    <>
+    <div>
+      <Sidnav/>
+      <div>
+  
     <Routes>
-      <Route path='/U' element={<Tabeldata/>}/>
+      <Route path='/w' element={<Tabeldata/>}/>
+      <Route path='/E' element={<Dashboard/>}/>
       <Route path='/T' element={<Tambahdata />}/>
-      <Route path='/S' element={<Editdata />}/>
+      <Route path="/edit/:id" element={<Editdata />}/>
     
     </Routes>
-
-    </>
+      </div>
+    </div>
   )
 }
 
