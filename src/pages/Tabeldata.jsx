@@ -22,52 +22,40 @@ const Menu = () => {
 
     fetchData();
   }, []);
+const handleDelete = (id) => {
+  Swal.fire({
+    title: "Yakin ingin menghapus data ini?",
+    text: "Data yang dihapus tidak bisa dikembalikan!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Ya, hapus!",
+    cancelButtonText: "Batal"
+  }).then(async (result) => {
+    // ❌ axios.delete tidak dipanggil sebelum ini
+    if (result.isConfirmed) {
+      try {
+        // ✅ axios.delete baru jalan setelah user klik "Ya, hapus!"
+        await axios.delete(`http://localhost:5000/menu/${id}`);
+        setData((prev) => prev.filter((item) => item.id !== id));
 
-  const handleDelete = async (id) => {
-    const konfirmasi = window.confirm("Yakin ingin menghapus data ini?");
-    if (!konfirmasi) return;
-
-    try {
-      await axios.delete(`http://localhost:5000/menu/${id}`);
-      Swal.fire({
-  title: "Are you sure?",
-  text: "You won't be able to revert this!",
-  icon: "warning",
-  showCancelButton: true,
-  confirmButtonColor: "#3085d6",
-  cancelButtonColor: "#d33",
-  confirmButtonText: "Yes, delete it!"
-}).then((result) => {
-  if (result.isConfirmed) {
-    Swal.fire({
-      title: "Deleted!",
-      text: "Your file has been deleted.",
-      icon: "success"
-    });
-  }
-});
-      setData((prev) => prev.filter((item) => item.id !== id));
-    } catch (err) {
-      console.error("Gagal menghapus data:", err);
-      Swal.fire({
-  title: "Are you sure?",
-  text: "You won't be able to revert this!",
-  icon: "warning",
-  showCancelButton: true,
-  confirmButtonColor: "#3085d6",
-  cancelButtonColor: "#d33",
-  confirmButtonText: "Yes, delete it!"
-}).then((result) => {
-  if (result.isConfirmed) {
-    Swal.fire({
-      title: "Deleted!",
-      text: "Your file has been deleted.",
-      icon: "success"
-    });
-  }
-});
+        Swal.fire({
+          title: "Terhapus!",
+          text: "Data berhasil dihapus.",
+          icon: "success",
+        });
+      } catch (err) {
+        console.error("Gagal menghapus data:", err);
+        Swal.fire({
+          title: "Gagal!",
+          text: "Terjadi kesalahan saat menghapus data.",
+          icon: "error",
+        });
+      }
     }
-  };
+  });
+};
 
   if (loading) return <p className="text-gray-600">Loading...</p>;
 
@@ -93,7 +81,7 @@ const Menu = () => {
                 <td className="px-4 py-2 border">{item.harga}</td>
                 <td className="px-4 py-2 border space-x-2">
                   <button
-                 onClick={() => navigate(`/edit/${item.id}`)}
+                    onClick={() => navigate(`/edit/${item.id}`)}
                     className="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 transition"
                   >
                     Edit

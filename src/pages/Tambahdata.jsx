@@ -36,7 +36,7 @@ function Tambahdata() {
         harga: "",
       });
 
-      Navigate("/U"); // setelah daftar, arahkan ke login
+      Navigate("/w"); // setelah daftar, arahkan ke login
     } catch (error) {
       console.error("Error saat menambahkan data:", error);
       Swal.fire({
@@ -118,7 +118,7 @@ function Tambahdata() {
               {loading ? "Menambahkan..." : "Paket"}
             </button>
             <Link
-              to="/U"
+              to="/"
               className="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             >
               Kembali

@@ -11,7 +11,7 @@ function Sidnav () {
                 <div className="text-xl font-bold mb-8 text-center bg-gray-700 py-4 shadow-lg">Binus</div>
 
                 <nav className="space-y-3">
-                    <a href="/E" className="block py-3 px-3 rounded hover:bg-blue-600 text-2xl text-white">Dashboard</a>
+                    <a href="/" className="block py-3 px-3 rounded hover:bg-blue-600 text-2xl text-white">Dashboard</a>
                     <a href="/w" className="block py-3 px-3 rounded hover:bg-blue-600 text-2xl text-white">Tabel Data</a>
                     <a href="" className="block py-2 px-3 rounded hover:bg-blue-600 text-2xl"></a>
                 </nav>
