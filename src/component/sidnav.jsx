@@ -12,8 +12,9 @@ function Sidnav () {
 
                 <nav className="space-y-3">
                     <a href="/" className="block py-3 px-3 rounded hover:bg-blue-600 text-2xl text-white">Dashboard</a>
-                    <a href="/w" className="block py-3 px-3 rounded hover:bg-blue-600 text-2xl text-white">Tabel Data</a>
-                    <a href="" className="block py-2 px-3 rounded hover:bg-blue-600 text-2xl"></a>
+                    <a href="/P" className="block py-3 px-3 rounded hover:bg-blue-600 text-2xl text-white">Data siswa</a>
+                    <a href="/w" className="block py-3 px-3 rounded hover:bg-blue-600 text-2xl text-white">Data menu kantin</a>
+                    <a href="Q" className="block py-2 px-3 rounded hover:bg-blue-600 text-2xl text-white fixed bottom-0 left-0 m-4">Profile</a>
                 </nav>
 
                 <div className=""></div>

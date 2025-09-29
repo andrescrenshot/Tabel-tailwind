@@ -6,27 +6,28 @@ import Editdata from "./pages/Editdata";
 import Sidnav from "./component/sidnav";
 import Dashboard from "./component/Dashboard";
 import Profile from "./component/Profile";
+import Datauser from "./pages/Datauser";
 
 
 
-
-const App = () => {
+function App() {
   return (
     <div>
-      <Sidnav/>
+      <Sidnav />
       <div>
-  
-    <Routes>
-      <Route path='/w' element={<Tabeldata/>}/>
-      <Route path='/' element={<Dashboard/>}/>
-      <Route path='/Q' element={<Profile/>}/>
-      <Route path='/T' element={<Tambahdata />}/>
-      <Route path="/edit/:id" element={<Editdata />}/>
-    
-    </Routes>
+
+        <Routes>
+          <Route path='/w' element={<Tabeldata />} />
+          <Route path='/P' element={<Datauser />} />
+          <Route path='/' element={<Dashboard />} />
+          <Route path='/Q' element={<Profile />} />
+          <Route path='/T' element={<Tambahdata />} />
+          <Route path="/edit/:id" element={<Editdata />} />
+
+        </Routes>
       </div>
     </div>
-  )
+  );
 }
 
 export default App

@@ -1,6 +1,7 @@
-
+import { useState } from "react";
 
 function Profile() {
+  const [showSejarah, setShowSejarah] = useState(false);
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
@@ -15,25 +16,35 @@ function Profile() {
         <p className="mt-3 text-gray-600 text-sm">
           Pembuat robot ambatron dan pabrik muani
         </p>
-        
+
         <div className="flex justify-center mt-4 gap-3">
-          <a
-            href="#"
+          <button
             className="px-4 py-2 text-sm bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition"
           >
             Hitamkan
-          </a>
-          <a
-            href="#"
+          </button>
+          <button
+            onClick={() => setShowSejarah(!showSejarah)}
             className="px-4 py-2 text-sm border border-gray-300 rounded-lg hover:bg-gray-100 transition"
           >
-            Kirim pesan
-          </a>
+            Sejarah
+          </button>
         </div>
+
+        {/* Bagian Sejarah muncul di bawah profil */}
+        {showSejarah && (
+          <div className="mt-6 text-left bg-gray-50 p-4 rounded-lg shadow-inner">
+            <h3 className="text-lg font-semibold text-gray-800 mb-2">
+              Sejarah Moreno
+            </h3>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              moreno adalah seoarang ngebrok ambatron
+            </p>
+          </div>
+        )}
       </div>
     </div>
   );
 }
-
 
 export default Profile;

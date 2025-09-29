@@ -9,16 +9,16 @@ function EditData() {
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
-    makanan: "",
-    paket: "",
-    harga: "",
+    nama: "",
+    email: "",
+    jurusan: "",
   });
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/menu/${id}`);
+        const res = await axios.get(`http://localhost:5000/siswa/${id}`);
         const data = Array.isArray(res.data) ? res.data[0] : res.data;
         setFormData(data);
       } catch (err) {
@@ -39,7 +39,7 @@ function EditData() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:5000/menu/${id}`, formData);
+      await axios.put(`http://localhost:5000/siswa/${id}`, formData);
       Swal.fire({
         title: "Do you want to save the changes?",
         showDenyButton: true,
@@ -54,7 +54,7 @@ function EditData() {
           Swal.fire("Changes are not saved", "", "info");
         }
       });
-      navigate("/w");
+      navigate("/P");
     } catch (err) {
       console.error("Gagal mengupdate data:", err);
       alert("Gagal mengupdate data!");
@@ -73,24 +73,24 @@ function EditData() {
           className="bg-white shadow-md rounded-lg p-6"
         >
           <div className="mb-4">
-            <label htmlFor="makanan">Makanan</label>
+            <label htmlFor="Nama">Nama</label>
             <input
-              id="makanan"
-              name="makanan"
+              id="nama"
+              name="nama"
               type="text"
-              value={formData.makanan || ""}
+              value={formData.nama || ""}
               onChange={handleChange}
               className="shadow appearance-none border rounded w-full"
               required
             />
           </div>
           <div className="mb-4">
-            <label htmlFor="paket">paket</label>
+            <label htmlFor="email">Email</label>
             <input
-              id="paket"
-              name="paket"
+              id="email"
+              name="email"
               type="text"
-              value={formData.paket || ""}
+              value={formData.email || ""}
               onChange={handleChange}
               className="shadow appearance-none border rounded w-full"
               required
@@ -98,12 +98,12 @@ function EditData() {
           </div>
 
           <div className="mb-4">
-            <label htmlFor="harga">harga</label>
+            <label htmlFor="jurusan">Jurusan</label>
             <input
-              id="harga"
-              name="harga"
+              id="jurusan"
+              name="jurusan"
               type="text"
-              value={formData.harga || ""}
+              value={formData.jurusan || ""}
               onChange={handleChange}
               className="shadow appearance-none border rounded w-full"
               required

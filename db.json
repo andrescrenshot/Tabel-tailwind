@@ -9,12 +9,6 @@
   ],
   "menu": [
     {
-      "id": "bf58",
-      "makanan": "moreno kecap celup",
-      "paket": ";.';';,;>.;,",
-      "harga": "kode morse"
-    },
-    {
       "id": "b1e8",
       "makanan": "moreno kecap celup",
       "paket": "paket 1",
